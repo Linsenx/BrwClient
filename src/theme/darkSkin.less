@@ -1,0 +1,43 @@
+//窗口界面基础色
+@basic-windows : @black;
+//文字基础色
+@basic-font: @white;
+//图标基础色
+@basic-icon: @white;
+//GUI-TABS
+@basic-tab: @blueDark_;
+@basic-tab-fire: @blueLight;
+@basic-tab-active: @blue;
+
+.darkSkin 
+{
+  
+  //ICON颜色配置
+  [class^="icon-"], [class*=" icon-"] {
+    color: @basic-icon;
+  }
+  
+  //杂项界面配置
+  .game-loading {
+    #loading-bar {
+      color: @white;
+      #top    {background: @blueLight;}
+      #bottom {background: @gray;}
+    }
+  }
+
+  .game-login {
+    #login-box {
+      background: fadeout(@basic-windows, 70%);
+    }
+    li {  
+      input {
+        color: @basic-font;
+      }
+      &.list {
+        background: fadeout(@basic-windows, 65%);
+      }
+    }
+  }
+
+}

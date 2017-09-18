@@ -1,0 +1,112 @@
+//UI基础色
+@black: #1E1E1E;
+@white: #FFFFFF;
+@gray: #F0F0F0;
+@blue: #2590DE;
+@blueLight: #35B4D7;
+@blueLight_: #2BA0C1;
+@blueDark: #465D72;
+@blueDark_: #3B4E61;
+@blueDark__: #384854;
+@pink: #E24785;
+@pinkDark: #CF365D;
+@red: #EB384B;
+@green: #2ABA63;
+@yellow: #FBB53D;
+@orange: #FB8434;
+@purple: #A644B6;
+@Turquoise: #20BCBC;
+
+.gui-icon {
+  &__left {
+    margin-right: 5px;
+  }
+  &__right {
+    margin-left: 5px;
+  }
+}
+
+//GUI-BUTTON
+.gui-button-mixin(@color) {
+  border: none;
+  outline: none;
+  white-space:nowrap;
+  text-align: center;
+  background: @color;
+  &:hover {
+    cursor: pointer;
+    background: lighten(@color, 3%);
+  }
+  &:active {
+    cursor: pointer;
+    background: darken(@color, 5%);
+  }
+  &.disabled {
+    cursor: not-allowed;
+    background: darken(@color, 15%);
+    &:hover {background: darken(@color, 15%);}
+    &:active {background: darken(@color, 15%);}
+  }
+}
+.gui-button {
+  &.__red {.gui-button-mixin(@red);}
+  &.__green {.gui-button-mixin(@green);}
+  &.__blue {.gui-button-mixin(@blue);}
+  &.__bluelight {.gui-button-mixin(@blueLight);}
+  &.__small {height: 23px; line-height: 23px; padding: 0 10px 0 10px;}
+  &.__large {height: 30px; line-height: 30px; padding: 0 15px 0 15px;}
+}
+
+//GUI-TABS
+.gui-tabs {
+  .gui-tabs_header {
+    width: 273px;
+    height: 35px;
+    border-radius: 5px 5px 0px 0px;
+    background: linear-gradient(to right,fadeout(@basic-windows,20%), fadeout(@basic-windows,100%));
+    .gui-tabs_header_tab {
+      width: 40px;
+      height: 30px;
+      margin-right:2px;
+      margin-top: 5px;
+      border-radius: 5px 5px 0px 0px;
+      background: @basic-tab;
+      text-align: center;
+      font-size: 20px;
+      line-height: 30px;
+      &:hover {
+        cursor: pointer;
+        background: @basic-tab-fire;
+      }
+      &:active {
+        cursor: pointer;
+        background: @basic-tab-active;
+      }
+      &.active {
+        background: @basic-tab-active;
+      }
+    }
+  }
+}
+
+.gui-tab-pane {
+  width: 273px-20px;
+  height: 446px-20px;
+  padding: 10px;
+  border-radius: 5px;
+  background: fadeout(@basic-windows,75%);
+
+  .gui-tab-pane_title {
+    width: 254px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    background: fadeout(@basic-windows,70%);
+  }
+
+  .gui-tab-pane_content {
+    padding: 10px 0px 10px 0px;
+  }
+}
+
