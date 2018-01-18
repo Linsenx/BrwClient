@@ -1,18 +1,19 @@
-//窗口界面基础色
-@basic-windows : @black;
-//文字基础色
-@basic-font: @white;
-//图标基础色
-@basic-icon: @white;
-//GUI-TABS
-@basic-tab: @blueDark_;
-@basic-tab-fire: @blueLight;
-@basic-tab-active: @blue;
-
 .darkSkin 
-{
-  
-  //ICON颜色配置
+{  
+  //窗口界面基础色
+  @basic-windows : @black;
+  //文字基础色
+  @basic-font: @white;
+  @basic-border: @white;
+  //图标基础色
+  @basic-icon: @white;
+  //GUI-TABS
+  @basic-tab: @blueDark_;
+  @basic-tab-fire: @blueLight;
+  @basic-tab-active: @blue;
+  @basic-itembox: @blueDark_;
+
+  //图标配置
   [class^="icon-"], [class*=" icon-"] {
     color: @basic-icon;
   }
@@ -25,7 +26,6 @@
       #bottom {background: @gray;}
     }
   }
-
   .game-login {
     #login-box {
       background: fadeout(@basic-windows, 70%);
@@ -39,5 +39,57 @@
       }
     }
   }
-
+  .game-panels-character {
+    background: fadeout(@basic-windows, 75%);
+    .game-panels-character_right {
+      .chara_name {
+        background: linear-gradient(to right,fadeout(@basic-windows,0%), fadeout(@basic-windows,30%))
+      }
+    }
+  }
+  .game-panels-map {
+    background: fadeout(@basic-windows, 70%);
+    border: 1px solid fadeout(@basic-border, 80%);
+  }
+    
+  //GUI配置
+  .gui-tabs {
+    .gui-tabs_header {
+      background: linear-gradient(to right,fadeout(@basic-windows,20%), fadeout(@basic-windows,100%));
+    }
+    .gui-tabs_header_tab {
+      background: @basic-tab;  
+      &:hover {
+        background: @basic-tab-fire;
+      }
+      &:active {
+        background: @basic-tab-active;
+      }
+      &.active {
+        background: @basic-tab-active;
+      }
+    }
+  }
+  .gui-tab-pane {
+    background: fadeout(@basic-windows,75%);
+    .gui-tab-pane_title {
+      background: fadeout(@basic-windows,70%);
+    }
+  }
+  .gui-mapblock {
+    border-right: 1px solid fadeout(@basic-border, 80%);
+    border-bottom: 1px solid fadeout(@basic-border, 80%);
+    .gui-mapblock_location {
+      background: fadeout(@basic-windows, 35%)
+    }
+  }
+  .gui-itembox {
+    background: @basic-itembox;
+    .gui-iteminfo {
+      .gui-itembox_name {
+        background: linear-gradient(to right,fadeout(@basic-windows,20%), fadeout(@basic-windows,100%));    
+      }
+    }
+  }
 }
+ 

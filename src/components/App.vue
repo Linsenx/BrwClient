@@ -23,7 +23,7 @@ export default {
         transform: `scale(${this.scale})`,
         marginTop: `${this.marginTop}px`,
         marginLeft: `${this.marginLeft}px`,
-        background: `url(./static/images/dark/background/${this.$store.state.background}.png)`,
+        background: `url(./static/dark/images/background/${this.$store.state.background}.png)`,
         backgroundSize: '1140px 720px'
       }
     }
@@ -33,7 +33,7 @@ export default {
       let scale = window.innerHeight / 720
       //let scale = window.innerWidth / 1140
       //scale = scale <= 0.5 ? 0.5 : scale 
-      scale = 1;
+      //scale = 1;
       this.resetWindowsize(scale)
     }
     this.resetWindowsize(window.innerHeight / 720)
@@ -61,7 +61,7 @@ export default {
   color: @white;
   font-size: 12px;
   font-weight: normal;
-  font-family: "黑体";
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   // font-family: "Open Sans", sans-serif
 }
 
@@ -70,7 +70,7 @@ body { -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, button, input, textarea, th, td { margin:0; padding:0; }
 h1, h2, h3, h4, h5, h6{ font-size:100%; }
 address, cite, dfn, em, var { font-style:normal; }
-code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+// code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
 small{ font-size:12px; }
 ul, ol { list-style:none; }
 a { text-decoration:none; }
@@ -80,5 +80,6 @@ sub{ vertical-align:text-bottom; }
 fieldset, img { border:0; }
 input { border:0; outline:none; }
 table { border-collapse:collapse; border-spacing:0; }
+
 
 </style>

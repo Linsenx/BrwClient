@@ -1,6 +1,6 @@
 //require css
 require("./css/animate.css")
-require("./../static/fonts/public/gicon/style.css")
+require("./../static/public/fonts/gicon/style.css")
 
 //import the core classes
 import Vue from 'vue'
@@ -18,12 +18,14 @@ import strokefont from './components/gui/strokefont/strokefont'
 import button from './components/gui/button/button'
 import tabs from './components/gui/tab/tabs'
 import tabPane from './components/gui/tab/tab-pane'
+import progress from './components/gui/progress/progress'
 
 //register the gui components
 Vue.component('gui-strokefont', strokefont)
 Vue.component('gui-button', button)
 Vue.component('gui-tabs', tabs)
 Vue.component('gui-tab-pane', tabPane)
+Vue.component('gui-progress', progress)
 
 Vue.config.productionTip = false
 

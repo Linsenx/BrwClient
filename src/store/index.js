@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 
   state: {
-    background: 'bg0'
+    background: 'bg2'
   },
 
   modules: {

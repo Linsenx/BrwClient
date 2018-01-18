@@ -20,7 +20,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: 'blue'
+      default: 'bluelight'
     },
     width: {
       type: Number,
@@ -55,9 +55,9 @@ export default {
     }
   },
   methods: {
-      handleClick(evt) {
-        this.$emit('click', evt);
-      }
+    handleClick(evt) {
+      this.$emit('click', evt);
+    }
   }
 }
 </script>

@@ -1,20 +1,14 @@
-<script>
-export default {
-  name: 'game-stage-tabs-profile-attribute'
-}
-</script>
-
 <template>
   <div>
     <div class="equipment">
       <div class="gui-tab-pane_title">
-        <gui-strokefont :size="14" text="属性" />
+        <gui-strokefont :size="14" weight="bold" text="属性" />
       </div>
       <div class="gui-tab-pane_content">
         <ul>
           <li v-for="x in (1,2,3,4,5,6)">
             <gui-strokefont :size="14" text="武" />
-            <gui-strokefont :size="12" text="M4A1-S" />
+            <gui-strokefont :size="12" text="黄铜灯柱" />
             <gui-strokefont :size="10" text="888" />
             <gui-strokefont :size="10" text="88" />
           </li>
@@ -24,29 +18,31 @@ export default {
 
     <div class="wepskills">
       <div class="gui-tab-pane_title">
-        <gui-strokefont :size="14" text="熟练度" />
+        <gui-strokefont :size="14" weight="bold" text="熟练度" />
       </div>
       <div class="gui-tab-pane_content">
-        <!-- <ul>
-            <li v-for="x in (1,2,3,4,5,6)">
-              <gui-strokefont :size="14" text="投掷" />
-              <gui-strokefont :size="12" text="600" />
-            </li>
-          </ul> -->
         <div class="block" v-for="x in (1,2,3,4,5)">
           <gui-strokefont :size="14" :text="['殴打','斩杀','射击','投掷','爆破'][x-1]" />
-          <gui-strokefont :size="12" :text="String(Math.ceil(Math.random()*1000))" />
+          <gui-strokefont :size="12" :text="String(Math.ceil(Math.random()*200))" />
         </div>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'game-stage-tabs-profile-attribute'
+}
+</script>
+
 <style lang="less" scoped>
 @import "~../../../theme/main.less";
 
 .box-mixin(@color, @width: 30px) {
+  text-overflow: hidden;
   display: inline-block;
+  //flex-basis: @width;
   width: @width;
   height: 25px;
   line-height: 25px;
@@ -91,4 +87,12 @@ export default {
     }
   }
 }
+
+// //Flex Box
+// .flex-equipment-list {
+//   display: flex;
+//   span:nth-child(2) {
+//     width: 20px;
+//   }
+// }
 </style>

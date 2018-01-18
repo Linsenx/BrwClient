@@ -56,57 +56,95 @@
   &.__small {height: 23px; line-height: 23px; padding: 0 10px 0 10px;}
   &.__large {height: 30px; line-height: 30px; padding: 0 15px 0 15px;}
 }
-
 //GUI-TABS
 .gui-tabs {
   .gui-tabs_header {
     width: 273px;
     height: 35px;
     border-radius: 5px 5px 0px 0px;
-    background: linear-gradient(to right,fadeout(@basic-windows,20%), fadeout(@basic-windows,100%));
     .gui-tabs_header_tab {
       width: 40px;
       height: 30px;
       margin-right:2px;
       margin-top: 5px;
       border-radius: 5px 5px 0px 0px;
-      background: @basic-tab;
       text-align: center;
       font-size: 20px;
       line-height: 30px;
-      &:hover {
-        cursor: pointer;
-        background: @basic-tab-fire;
-      }
-      &:active {
-        cursor: pointer;
-        background: @basic-tab-active;
-      }
-      &.active {
-        background: @basic-tab-active;
-      }
+      cursor: pointer;      
     }
   }
 }
-
 .gui-tab-pane {
   width: 273px-20px;
   height: 446px-20px;
   padding: 10px;
   border-radius: 5px;
-  background: fadeout(@basic-windows,75%);
-
   .gui-tab-pane_title {
     width: 254px;
     height: 35px;
     line-height: 35px;
     text-align: center;
     border-radius: 5px;
-    background: fadeout(@basic-windows,70%);
   }
-
   .gui-tab-pane_content {
     padding: 10px 0px 10px 0px;
   }
 }
-
+//GUI-ITEMBOX
+.gui-itembox {
+  width: 250px-5px;
+  height: 43px-5px;
+  padding: 5px;
+  border-radius: 5px;
+  .gui-iteminfo {
+    float: left;
+    .gui-itembox_name {
+      width: 200px-10px;
+      height: 18px;
+      line-height: 18px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    .gui-itembox-kind {
+      display: inline-block;
+      padding: 3px 5px;
+    }
+    .gui-itembox-ammount {
+      float: right;
+      padding: 3px 5px;
+    }
+  }
+  .gui-itembox-button {
+    float: right;
+  }
+}
+//GUI-PROGRESS
+.gui-progress_outer-mixin(@color) {
+  .gui-progress_outer {
+    position: relative;
+    border-radius: 5px;
+    background: @color;
+  }
+}
+.gui-progress_inner-mixin(@color) {
+  .gui-progress_outer {
+    .gui-progress_inner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: width 0.3s ease-in-out;
+      border-radius: 5px;
+      background: @color;
+    }
+  }
+}
+.gui-progress {
+  text-align: center;
+  &._inner__red {.gui-progress_inner-mixin(@red);}
+  &._inner__green {.gui-progress_inner-mixin(@green);}
+  &._inner__blue {.gui-progress_inner-mixin(@blue);}
+  &._inner__bluelight {.gui-progress_inner-mixin(@blueLight);}
+  &._outer__bluedark {.gui-progress_outer-mixin(@blueDark_);}
+  &._outer__white {.gui-progress_outer-mixin(@white);}
+}

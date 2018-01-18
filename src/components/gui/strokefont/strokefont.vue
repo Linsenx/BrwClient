@@ -44,6 +44,10 @@ export default {
       type: Number,
       default: 12
     },
+    weight: {
+      type: String,
+      default: ''
+    },
     spacing: {
       type: Number,
       default: 0
@@ -54,7 +58,7 @@ export default {
     },
     strokeType: { //描边实现方式 0:text-stroke 1:text-shadow 3:svg(未完善)
       type: Number,
-      default: 0
+      default: 1
     },
     strokeColor: {
       type: String,
@@ -99,6 +103,9 @@ export default {
       let style = {}
       style.fontSize = `${this.size}px`
       style.letterSpacing = `${this.spacing}px`
+      style.fontWeight = this.weight
+      //style.margin = `${this.strokeWidth}px`
+      // style.textAlign = this.align
       return style
     },
     shadowStroke() {
@@ -119,8 +126,9 @@ export default {
       let style = {}
       style.color = `${this.color}`
       if (this.strokeType == 1) {
-        style.textShadow = this.shadowStroke
+        //style.textShadow = this.shadowStroke
       }
+      style.textShadow = "1px 0px 1px black, 1px 0px 1px black, 1px 0px 1px black, -1px 0px 1px black, -1px 0px 1px black, -1px 0px 1px black,0px -1px 1px black, 0px -1px 1px black, 0px -1px 1px black,0px 1px 1px black, 0px 1px 1px black, 0px 1px 1px black"
       return style
     },
     strokeStyle() {

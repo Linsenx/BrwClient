@@ -3,10 +3,11 @@ const state = {
   bra: {
     resource: [
       //backgrounds
-      './static/images/dark/background/bg0.png',
-      //icons
-      // './static/images/dark/icon/User-Icon.png',
-      // './static/images/dark/icon/Lock-Icon.png',
+      './static/dark/images/background/bg0.png',
+      //character
+      './static/public/character/f249.png',
+      //map
+      './static/public/map/island.png',
     ]
   }
 }
